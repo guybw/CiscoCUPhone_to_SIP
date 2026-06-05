@@ -228,9 +228,6 @@ back to safe built-in defaults and don't affect operation:
 ## 10. Security checklist
 
 - Keep `<webAccess>0</webAccess>` unless you actively need the web UI.
-- Use a **strong, unique SIP password** at your provider. If a password has ever
-  been pasted/shared (e.g. while getting help), rotate it, then update
-  `authPassword` in the config and re-copy.
 - Put the phone on a trusted LAN; don't expose SIP/TFTP to the internet.
 - The TFTP server must stay reachable: the phone re-reads config on every boot.
 
