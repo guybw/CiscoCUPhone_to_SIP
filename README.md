@@ -1,5 +1,7 @@
 # Cisco IP Phone 8841 → Generic SIP (e.g. sipgate), no MPP licence, no PBX
 
+I wrote this guide to help myself as I was nearly going to buy a license to enable SIP calling when it was already able to be done, I hope this helps someone!
+
 Register a **Cisco IP Phone 8841 (or 8811 / 8851 / 8861)** running the standard
 **Enterprise "SIP" firmware** directly to a generic SIP provider such as
 **sipgate**, using nothing more than a small TFTP server and a config file.
