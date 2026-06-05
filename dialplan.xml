@@ -1,0 +1,32 @@
+<!--
+  UK dial plan for Cisco IP Phone 78xx/88xx (Enterprise SIP firmware).
+  Referenced from the SEP config via <dialTemplate>dialplan.xml</dialTemplate>.
+
+  Match syntax:
+    .       = any single digit
+    [1-8]   = digit range
+    \*      = literal star key
+    *       = catch-all (anything not matched above)
+  Timeout = seconds to wait after the pattern matches before dialling.
+            0 = dial immediately. Longest match wins; dots don't count toward length.
+
+  Adjust the geographic/mobile lengths if you are outside the UK.
+-->
+<DIALTEMPLATE>
+<TEMPLATE MATCH="999" Timeout="0"/>          <!-- Emergency -->
+<TEMPLATE MATCH="112" Timeout="0"/>          <!-- Emergency (EU) -->
+<TEMPLATE MATCH="111" Timeout="0"/>          <!-- NHS non-emergency -->
+<TEMPLATE MATCH="101" Timeout="0"/>          <!-- Police non-emergency -->
+<TEMPLATE MATCH="105" Timeout="0"/>          <!-- Power cut line -->
+<TEMPLATE MATCH="100" Timeout="0"/>          <!-- Operator -->
+<TEMPLATE MATCH="155" Timeout="0"/>          <!-- International operator -->
+<TEMPLATE MATCH="123" Timeout="0"/>          <!-- Speaking clock -->
+<TEMPLATE MATCH="116..." Timeout="0"/>       <!-- Helplines (116xxx) -->
+<TEMPLATE MATCH="118..." Timeout="2"/>       <!-- Directory enquiries -->
+<TEMPLATE MATCH="0[123]........." Timeout="0"/>  <!-- Geographic + 03, 11 digits -->
+<TEMPLATE MATCH="07........." Timeout="0"/>      <!-- Mobile, 11 digits -->
+<TEMPLATE MATCH="08........." Timeout="0"/>      <!-- 08xx, 11 digits -->
+<TEMPLATE MATCH="09........." Timeout="0"/>      <!-- 09xx premium, 11 digits -->
+<TEMPLATE MATCH="\*.." Timeout="2"/>             <!-- Star service codes -->
+<TEMPLATE MATCH="*" Timeout="5"/>                <!-- Anything else (incl. international 00...) -->
+</DIALTEMPLATE>

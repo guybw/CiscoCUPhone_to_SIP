@@ -1,0 +1,8 @@
+<!--
+  Minimal application dial rules. The phone requests this file at boot; an empty
+  ruleset satisfies the request and stops the "file not found" lookups in the
+  TFTP log. Add <DialRule .../> entries here only if you need digit
+  transformations for directory / call-history dialling.
+-->
+<DialRules>
+</DialRules>
